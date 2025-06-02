@@ -1,0 +1,504 @@
+/* =====================================
+   Reset básico y estilos globales
+   ===================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+body {
+  background-color: #fafafa;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Paleta de colores: 
+   - Primario: #004080 (azul oscuro)
+   - Secundario: #f2c94c (amarillo oro)
+   - Texto oscuro: #333333
+   - Texto claro: #ffffff
+   - Fondo claro: #fafafa
+   - Acento: #e74c3c (rojo suave)
+*/
+
+/* =====================================
+   Contenedores y utilidades
+   ===================================== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+  color: #004080;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Clases de botones */
+.btn-primary {
+  display: inline-block;
+  background-color: #004080;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #003060;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: #f2c94c;
+  color: #333333;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #d4b24a;
+}
+
+/* =====================================
+   Header y navegación
+   ===================================== */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+/* Logo */
+.logo-img {
+  max-height: 50px;
+}
+
+/* ===== Menú principal (desktop) ===== */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #004080;
+}
+
+/* ===== Checkbox (oculto) ===== */
+.menu-toggle {
+  display: none;
+}
+
+/* ===== Botón hamburguesa ===== */
+.hamburger {
+  display: none; /* se muestra solo en móvil */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 21px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Cuando el checkbox está marcado, cambia el estilo del icono */
+.menu-toggle:checked + .hamburger .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===== Menú lateral (drawer) ===== */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: -260px; /* oculto por defecto */
+  width: 260px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+/* Al estar el checkbox marcado, despliega el side-nav */
+.menu-toggle:checked ~ .side-nav {
+  left: 0;
+}
+
+.side-nav ul {
+  list-style: none;
+  margin-top: 4rem; /* separa del borde superior */
+  padding-left: 0;
+}
+
+.side-nav li {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.side-nav a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: #333333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+  background-color: #f2f2f2;
+  color: #004080;
+}
+
+/* =====================================
+   Sección Hero (index.html)
+   ===================================== */
+.hero {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.hero-text {
+  flex: 1 1 400px;
+  margin-right: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* =====================================
+   Sección Quick Categories (index.html)
+   ===================================== */
+.quick-categories {
+  background-color: #ffffff;
+  padding: 2rem 0;
+}
+
+.category-card {
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1 1 250px;
+  margin: 1rem;
+}
+
+.category-card h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+/* =====================================
+   Lista de promociones (promociones.html)
+   ===================================== */
+.promotions-list {
+  padding: 2rem 0;
+}
+
+.promotions-list h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.promo-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.promo-card img,
+.promo-card video {
+  width: 30%;
+  max-width: 40%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.promo-content {
+  flex: 1 1 300px;
+  padding: 1.5rem;
+}
+
+.promo-content h2 {
+  margin-bottom: 0.5rem;
+}
+
+.promo-content p {
+  margin-bottom: 1rem;
+}
+
+.promo-video {
+  max-height: 250px;
+}
+
+/* =====================================
+   Sección Contacto (contacto.html)
+   ===================================== */
+.contact-section {
+  padding: 2rem 0;
+  background-color: #ffffff;
+}
+
+.contact-section h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 0.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #004080;
+}
+
+/* =====================================
+   Footer común
+   ===================================== */
+.site-footer {
+  background-color: #010e19;
+  color: #ffffff;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.site-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  flex: 1 1 500px;
+}
+
+.subscribe {
+  flex: 1 1 300px;
+}
+
+.subscribe h3 {
+  margin-bottom: 0.75rem;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.subscribe-form input {
+  flex: 1 1 auto;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.subscribe-form input:focus {
+  outline: none;
+}
+
+.subscribe-form button {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.social {
+  flex: 1 1 200px;
+}
+
+.social-list {
+  list-style: none;
+}
+
+.social-list li {
+  margin-bottom: 0.5rem;
+}
+
+.social-list a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.social-list a:hover {
+  text-decoration: underline;
+}
+
+.site-footer p {
+  text-align: center;
+  width: 100%;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* =====================================
+   Estilos responsivos
+   ===================================== */
+@media (max-width: 768px) {
+  /* Ocultar menú principal de escritorio */
+  .main-nav {
+    display: none;
+  }
+
+  /* Mostrar botón hamburguesa */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Ajustar header-inner para que no desborde */
+  .header-inner {
+    justify-content: space-between;
+  }
+
+  /* Hero en móvil: apilar y centrar */
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-text {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  /* Promo cards en móvil: apilar */
+  .promo-card {
+    flex-direction: column;
+  }
+
+  .promo-card img,
+  .promo-card video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Footer en móvil: centrar */
+  .site-footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .subscribe-form input,
+  .subscribe-form button {
+    width: 100%;
+    border-radius: 0.25rem;
+  }
+
+  .subscribe-form button {
+    margin-top: 0.5rem;
+  }
+}

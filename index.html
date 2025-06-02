@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siman | Promociones Exclusivas</title>
+  <!-- Google Fonts: Roboto (sans-serif) y Playfair Display (serif) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+<!-- Header con checkbox hack para menú lateral -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Logo-siman-nuevo.png" alt="Logo Siman" class="logo-img" />
+        </a>
+      </div>
+
+      <!-- Checkbox oculto que controla la visibilidad del menú lateral -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+      <!-- Label que actúa como botón “hamburguesa” -->
+      <label for="menu-toggle" class="hamburger" aria-label="Abrir/cerrar menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+
+      <!-- Menú lateral (drawer) -->
+      <nav class="side-nav">
+        <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="pages/promociones.html">Promociones</a></li>
+          <li><a href="pages/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Menú principal (desktop) -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="pages/promociones.html">Promociones</a></li>
+          <li><a href="pages/contacto.html">Contacto</a></li>
+          <li><a href="pages/Registrarse.html">Registrarse</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección principal (hero con llamada a la acción) -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>¡Bienvenido a las Promociones Exclusivas de Siman!</h1>
+      <p>
+        Descubre descuentos únicos y eventos especiales.  
+        Suscríbete para recibir notificaciones automáticas.
+      </p>
+      <a href="pages/promociones.html" class="btn-primary">Ver Promociones</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://siman.vtexassets.com/assets/vtex.file-manager-graphql/images/18dfe77d-df80-4f31-95b8-acbbd80f404b___3065afa9fa88a579bcaf6bdc87322426.gif" alt="Promoción Siman" />
+    </div>
+  </section>
+
+  <!-- Sección de categorías rápidas -->
+  <section class="quick-categories">
+    <div class="container">
+      <article class="category-card">
+        <h2>Moda</h2>
+        <p>Hasta 50% de descuento en ropa de temporada.</p>
+      </article>
+      <article class="category-card">
+        <h2>Electrónica</h2>
+        <p>Ofertas imperdibles en televisores y audio.</p>
+      </article>
+      <article class="category-card">
+        <h2>Hogar</h2>
+        <p>Descuentos en muebles y decoración.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer con formulario de suscripción -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="subscribe">
+          <h3>Suscríbete y recibe ofertas directamente</h3>
+          <form action="#" method="POST" class="subscribe-form">
+            <label for="email" class="sr-only">Correo Electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="tucorreo@ejemplo.com"
+              required
+            />
+            <button type="submit" class="btn-secondary">Suscribirme</button>
+          </form>
+        </div>
+        <div class="social">
+          <h3>Síguenos en redes sociales</h3>
+          <ul class="social-list">
+            <li><a href="https://www.facebook.com/simanelsalvador" aria-label="Facebook">Facebook</a></li>
+            <li><a href="https://www.instagram.com/almacenessiman_sv/" aria-label="Instagram">Instagram</a></li>
+            <li><a href="http://www.youtube.com/user/SimanElSalvador/" aria-label="Twitter">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">
+        &copy; 2025 Siman El Salvador. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

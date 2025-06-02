@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siman | Promociones</title>
+  <!-- Google Fonts compartidas -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Al referenciar desde esta carpeta, volvemos dos niveles para llegar a CSS -->
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <!-- Header con checkbox hack -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/images/banner.jpg" alt="Logo Siman" class="logo-img" />
+        </a>
+      </div>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="hamburger" aria-label="Abrir/cerrar menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+
+      <nav class="side-nav">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="promociones.html" class="active">Promociones</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="promociones.html" class="active">Promociones</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección Promociones -->
+  <section class="promotions-list">
+    <div class="container">
+      <h1>Promociones Vigentes</h1>
+
+      <!-- Promo 1 -->
+      <article class="promo-card">
+        <img src="https://siman.vtexassets.com/assets/vtex.file-manager-graphql/images/fe7b9329-71a2-48fb-bb08-22c4ca577626___ceafe90096f28a1804b07243b5df8ea4.gif" alt="Promo Moda" />
+        <div class="promo-content">
+          <h2>40% de descuento en ropa de temporada</h2>
+          <p>
+            Renueva tu closet con los mejores estilos de temporada. Oferta válida
+            del 1 al 30 de junio.
+          </p>
+          <a href="#" class="btn-primary">Comprar Ahora</a>
+        </div>
+      </article>
+
+      <!-- Promo 2 (con video) -->
+      <article class="promo-card">
+        <video controls class="promo-video">
+          <source src="../assets/images/promo-video.mp4" type="video/mp4" />
+          Tu navegador no soporta reproducción de video.
+        </video>
+        <div class="promo-content">
+          <h2>Electrónica: Hasta 40% en televisores 4K</h2>
+          <p>
+            Experimenta la mejor calidad de imagen. Oferta válida hasta agotar stock.
+          </p>
+          <a href="#" class="btn-primary">Ver Detalles</a>
+        </div>
+      </article>
+
+      <!-- Promo 3 -->
+      <article class="promo-card">
+        <img src="../assets/images/promo1.jpg" alt="Promo Hogar" />
+        <div class="promo-content">
+          <h2>Muebles y decoración: 30% de descuento</h2>
+          <p>
+            Dale un nuevo aire a tu casa con nuestros muebles de colección. Válido
+            del 5 al 20 de junio.
+          </p>
+          <a href="#" class="btn-primary">Ver Catálogo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="subscribe">
+          <h3>¿Quieres más ofertas?</h3>
+          <form action="#" method="POST" class="subscribe-form">
+            <input
+              type="email"
+              id="email-promo"
+              name="email-promo"
+              placeholder="tucorreo@ejemplo.com"
+              required
+            />
+            <button type="submit" class="btn-secondary">Suscribirme</button>
+          </form>
+        </div>
+        <div class="social">
+          <h3>Síguenos en redes sociales</h3>
+          <ul class="social-list">
+            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Twitter">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">
+        &copy; 2025 Siman El Salvador. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
