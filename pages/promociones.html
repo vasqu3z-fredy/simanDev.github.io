@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Siman | Promociones</title>
   <!-- Al referenciar desde esta carpeta, volvemos dos niveles para llegar a CSS -->
-  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- ...existing code... -->
 </head>
 <body>
   <!-- Header con checkbox hack -->
@@ -53,10 +55,12 @@
         <div class="promo-content">
           <h2>40% de descuento en ropa de temporada</h2>
           <p>
-            Renueva tu closet con los mejores estilos de temporada. Oferta válida
-            del 1 al 30 de junio.
+            Renueva tu closet con los mejores estilos de temporada. 
           </p>
+          
           <a href="#" class="btn-primary">Comprar Ahora</a>
+          <h3>Ofertas válidas
+            del 1 al 30 de junio 2025.</h3>
         </div>
       </article>
 
@@ -67,9 +71,11 @@
         <div class="promo-content">
           <h2>Electrónica: Hasta 40% en televisores 4K</h2>
           <p>
-            Experimenta la mejor calidad de imagen. Oferta válida hasta agotar stock.
+            Experimenta la mejor calidad de imagen. 
           </p>
-          <a href="#" class="btn-primary">Ver Detalles</a>
+          <a href="#" class="btn-primary">Comprar ahora</a>
+          <h3>Ofertas válidas
+            del 1 al 30 de junio 2025.</h3>
         </div>
       </article>
 
@@ -79,27 +85,30 @@
         <div class="promo-content">
           <h2>Muebles y decoración: 35% de descuento</h2>
           <p>
-            Dale un nuevo aire a tu casa con nuestros muebles de colección. Válido
-            del 5 al 20 de junio.
+            Dale un nuevo aire a tu casa con nuestros muebles de colección. 
           </p>
-          <a href="#" class="btn-primary">Ver Catálogo</a>
+          <a href="#" class="btn-primary">Comprar ahora</a>
+          <h3>Ofertas válidas
+            del 1 al 30 de junio 2025.</h3>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer con formulario de suscripción -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
         <div class="subscribe">
-          <h3>¿Quieres más ofertas?</h3>
+         <h3>¿Quieres más ofertas?</h3>
           <p>Suscríbete y obtén un 10% de descuento adicional</p>
-          <form action="#" method="POST" class="subscribe-form">
+
+          <form action="confirmacion.html" method="GET" class="subscribe-form">
+            <label for="email" class="sr-only">Correo Electrónico</label>
             <input
               type="email"
-              id="email-promo"
-              name="email-promo"
+              id="email"
+              name="email"
               placeholder="tucorreo@ejemplo.com"
               required
             />
@@ -109,11 +118,24 @@
         <div class="social">
           <img src="https://praderaconcepcion.com/wp-content/uploads/2022/08/LOGO-SIMAN-768x193.png" alt="siman">
           <h3>Síguenos en redes sociales</h3>
-          
+           
+            <!-- Redes sociales -->
           <ul class="social-list">
-            <li><a href="#" aria-label="Facebook">Facebook</a></li>
-            <li><a href="#" aria-label="Instagram">Instagram</a></li>
-            <li><a href="#" aria-label="Twitter">Twitter</a></li>
+            <li>
+              <a href="https://www.facebook.com/simanelsalvador" aria-label="Facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/almacenessiman_sv/" aria-label="Instagram" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </li>
+            <li>
+              <a href="http://www.youtube.com/user/SimanElSalvador/" aria-label="YouTube" target="_blank">
+                <i class="fab fa-youtube"></i> YouTube
+              </a>
+            </li>
           </ul>
         </div>
       </div>

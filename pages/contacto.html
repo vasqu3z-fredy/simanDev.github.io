@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Siman | Contáctanos</title>
-   <link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="../css/main.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- ...existing code... -->
 </head>
 <body>
 <!-- Header con checkbox hack -->
@@ -48,7 +50,7 @@
       <p>
         Si tienes dudas o quieres más información, escríbenos y con gusto te atenderemos.
       </p>
-      <form action="#" method="POST" class="contact-form">
+      <form action="confirmacion.html" method="GET" class="contact-form">
         <div class="form-group">
           <label for="name">Nombre Completo</label>
           <input type="text" id="name" name="name" placeholder="Tu nombre" required />
@@ -78,18 +80,20 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer con formulario de suscripción -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
         <div class="subscribe">
          <h3>¿Quieres más ofertas?</h3>
           <p>Suscríbete y obtén un 10% de descuento adicional</p>
-          <form action="#" method="POST" class="subscribe-form">
+
+          <form action="confirmacion.html" method="GET" class="subscribe-form">
+            <label for="email" class="sr-only">Correo Electrónico</label>
             <input
               type="email"
-              id="email-contacto"
-              name="email-contacto"
+              id="email"
+              name="email"
               placeholder="tucorreo@ejemplo.com"
               required
             />
@@ -97,14 +101,26 @@
           </form>
         </div>
         <div class="social">
-        <img src="https://praderaconcepcion.com/wp-content/uploads/2022/08/LOGO-SIMAN-768x193.png" alt="siman">
-
+          <img src="https://praderaconcepcion.com/wp-content/uploads/2022/08/LOGO-SIMAN-768x193.png" alt="siman">
           <h3>Síguenos en redes sociales</h3>
-        
+           
+            <!-- Redes sociales -->
           <ul class="social-list">
-            <li><a href="#" aria-label="Facebook">Facebook</a></li>
-            <li><a href="#" aria-label="Instagram">Instagram</a></li>
-            <li><a href="#" aria-label="Twitter">Twitter</a></li>
+            <li>
+              <a href="https://www.facebook.com/simanelsalvador" aria-label="Facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/almacenessiman_sv/" aria-label="Instagram" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </li>
+            <li>
+              <a href="http://www.youtube.com/user/SimanElSalvador/" aria-label="YouTube" target="_blank">
+                <i class="fab fa-youtube"></i> YouTube
+              </a>
+            </li>
           </ul>
         </div>
       </div>

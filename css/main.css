@@ -11,9 +11,9 @@
    ===================================== */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'monserrat', sans-serif;
   line-height: 1.6;
   color: var(--color-h1);
   background-color: var(--color-fondo);
@@ -40,6 +40,7 @@ body {
     /* Colores de botones */
   --color-btn-primario: #004080; /* Azul oscuro (para botones primarios) */
   --color-btn-secundario: #646464; /* gris (para botones secundarios) */
+  --color-btn-terciario: #01111c; /* Azul brillante (para botones terciarios) */
   
 
   /* Color de acento / atención */
@@ -75,7 +76,13 @@ p {
 
 /* Clases de botones */
 .btn-primary {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 40%;
+  min-width: 40px;
+  max-width: 180px;
   background-color: var(--color-primario);
   color: #ffffff;
   padding: 0.75rem 1.5rem;
@@ -83,10 +90,14 @@ p {
   border-radius: 0.25rem;
   font-weight: 700;
   transition: background-color 0.3s ease;
+  white-space: nowrap;         /* Evita salto de línea */
+  font-size: clamp(0.9rem, 2vw, 1.1rem); /* Se adapta al ancho */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn-primary:hover {
-  background-color: #003060;
+  background-color: var(--color-btn-terciario);
 }
 
 .btn-secondary {
@@ -239,7 +250,7 @@ p {
   flex-wrap: wrap-reverse;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 2rem;
+  padding: 2rem 1.5rem;
 }
 
 .hero-text {
@@ -285,23 +296,27 @@ p {
 
 /* Cada tarjeta */
 .category-card {
-  background-color: #f9f9f9;
+  background-color: var(--color-fondo-secundario);
   border-radius: 0.5rem;
   padding: 1.5rem;
   text-align: center;
+  box-shadow: 0 5px 10px var(--color-fondo-secundario);
+  border-radius: 0.5rem;
+  
+  transition: box-shadow 0.3s;
 }
 
 /* Título dentro de la tarjeta */
 .category-card h2 {
   margin-bottom: 0.75rem;
   font-size: 1.5rem;
-  color: var(--color-h2);
+  color: var(--color-secundario);
 }
 
 /* Párrafo dentro de la tarjeta */
 .category-card p {
   margin-bottom: 1rem;
-  color: var(--color-texto);
+  color: var(--color-cuaternario);
 }
 
 /* Imagen debajo del párrafo */
@@ -368,7 +383,12 @@ p {
 .promo-content p {
   margin-bottom: 1rem;
 }
-
+.promo-content a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 .promo-video {
   max-height: 250px;
 }
@@ -603,25 +623,43 @@ p {
   /* Hero en móvil: apilar y centrar */
   .hero {
     flex-direction: column;
+   
   }
+  .hero-image {
+    flex: none;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    text-align: center;
+}
+  .hero-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
   .hero-text {
     margin-right: 0;
     margin-bottom: 1.5rem;
     text-align: center;
   }
-
+ .hero-text h1 {
+    font-size: 2rem;
+  }
   /* Promo cards en móvil: apilar */
   .promo-card {
     flex-direction: column;
   }
-
+  .btn-primary {
+    width: 70%;
+    font-size: clamp(0.95rem, 4vw, 1.2rem);
+  }
   .promo-card img
   {
     max-width: 100%;
     height: auto;
   }
-
+  
   /* Footer en móvil: centrar */
   .site-footer .container {
     flex-direction: column;
@@ -645,5 +683,6 @@ p {
 
   .subscribe-form button {
     margin-top: 0.5rem;
-  }
+ 
+}
 }
