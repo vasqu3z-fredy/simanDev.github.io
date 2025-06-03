@@ -6,11 +6,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* =====================================
+   Fuentes importadas
+   ===================================== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 
 html {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--color-h1);
+  background-color: var(--color-fondo);
 }
 
 body {
@@ -19,14 +25,32 @@ body {
   min-height: 100vh;
 }
 
-/* Paleta de colores: 
-   - Primario: #004080 (azul oscuro)
-   - Secundario: #f2c94c (amarillo oro)
-   - Texto oscuro: #333333
-   - Texto claro: #ffffff
-   - Fondo claro: #fafafa
-   - Acento: #e74c3c (rojo suave)
-*/
+:root {
+  /* Encabezados */
+  --color-h1:       #004080; /* Azul oscuro (para <h1>) */
+  --color-h2:       #003060; /* Azul más oscuro (para <h2>) */
+  --color-h3:       #0059B3; /* Azul medio (para <h3>) */
+
+  /* Colores principales de marca */
+  --color-primario: #004080; /* Azul oscuro (coincide con color-h1) */
+  --color-secundario: #F2C94C; /* Amarillo oro (destacado secundario) */
+  --color-terciario: #0074C8; /* Azul brillante (tono intermedio) */
+  --color-cuaternario: #bebebe; /* gris claro (para elementos secundarios) */
+
+    /* Colores de botones */
+  --color-btn-primario: #004080; /* Azul oscuro (para botones primarios) */
+  --color-btn-secundario: #646464; /* gris (para botones secundarios) */
+  
+
+  /* Color de acento / atención */
+  --color-acento:    #E74C3C; /* Rojo suave (para llamadas a acción o errores) */
+
+  /* Fondos y neutros */
+  --color-fondo:     #d2d2d2; /* Gris muy claro / casi blanco */
+  --color-fondo-secundario: #1f1f1f; /* Blanco puro (para fondos de tarjetas, secciones) */
+  --color-texto:     #333333; /* Gris oscuro para texto general */
+  --color-gris:      #E0E0E0; /* Gris claro (bordes, separadores, fondos secundarios) */
+}
 
 /* =====================================
    Contenedores y utilidades
@@ -41,7 +65,7 @@ h1,
 h2,
 h3 {
   font-family: 'Playfair Display', serif;
-  color: #004080;
+  color: var(--color-texto);
   margin-bottom: 0.5rem;
 }
 
@@ -52,7 +76,7 @@ p {
 /* Clases de botones */
 .btn-primary {
   display: inline-block;
-  background-color: #004080;
+  background-color: var(--color-primario);
   color: #ffffff;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
@@ -67,8 +91,8 @@ p {
 
 .btn-secondary {
   display: inline-block;
-  background-color: #f2c94c;
-  color: #333333;
+  background-color: var(--color-btn-secundario);
+  color: var(--color-gris);
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: 0.25rem;
@@ -79,7 +103,8 @@ p {
 }
 
 .btn-secondary:hover {
-  background-color: #d4b24a;
+  background-color: var(--color-secundario);
+    color:var(--color-texto);
 }
 
 /* =====================================
@@ -214,7 +239,7 @@ p {
   flex-wrap: wrap-reverse;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: 2rem 2rem;
 }
 
 .hero-text {
@@ -244,26 +269,58 @@ p {
 }
 
 /* =====================================
-   Sección Quick Categories (index.html)
+   Sección Quick Categories
    ===================================== */
 .quick-categories {
   background-color: #ffffff;
   padding: 2rem 0;
 }
 
+/* Container como grid: 4 columnas en pantallas grandes */
+.quick-categories .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Cada tarjeta */
 .category-card {
   background-color: #f9f9f9;
   border-radius: 0.5rem;
   padding: 1.5rem;
   text-align: center;
-  flex: 1 1 250px;
-  margin: 1rem;
 }
 
+/* Título dentro de la tarjeta */
 .category-card h2 {
   margin-bottom: 0.75rem;
   font-size: 1.5rem;
+  color: var(--color-h2);
 }
+
+/* Párrafo dentro de la tarjeta */
+.category-card p {
+  margin-bottom: 1rem;
+  color: var(--color-texto);
+}
+
+/* Imagen debajo del párrafo */
+.category-img {
+  margin-top: 1rem;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+}
+
+/* =====================================
+   Responsive: móviles (768px)
+   ===================================== */
+@media (max-width: 768px) {
+  .quick-categories .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 
 /* =====================================
    Lista de promociones (promociones.html)
@@ -285,14 +342,18 @@ p {
   margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
+  min-height: 300px; /
 }
 
-.promo-card img,
-.promo-card video {
-  width: 30%;
-  max-width: 40%;
-  height: 50%;
+.promo-card img
+ {
+  width: 100%;
+  max-width: 35%;
+  height: 100%;
+  max-height: 100%;
   object-fit: cover;
+  flex-shrink: 0;
+  align-self: stretch;
 }
 
 .promo-content {
@@ -323,6 +384,11 @@ p {
 .contact-section h1 {
   text-align: center;
   margin-bottom: 1rem;
+}
+.contact-section p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-texto);
 }
 
 .contact-form {
@@ -356,12 +422,56 @@ p {
   border-color: #004080;
 }
 
+
 /* =====================================
-   Footer común
+   Sección confirmación correo (confirmacion.html)
+   ===================================== */
+
+  .confirm-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.confirm-box {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-box h1 {
+  margin-bottom: 1rem;
+  color: var(--color-h1);
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.confirm-box p {
+  color: var(--color-texto);
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+.confirm-box img {
+  max-width: 90%;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.confirm-box .btn-primary {
+  display: inline-block;
+}
+/* =====================================
+   Footer común para todas las páginas
    ===================================== */
 .site-footer {
-  background-color: #010e19;
-  color: #ffffff;
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-gris);
   padding: 2rem 0;
   margin-top: 2rem;
 }
@@ -370,7 +480,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .footer-content {
@@ -381,11 +491,18 @@ p {
 }
 
 .subscribe {
-  flex: 1 1 300px;
+  flex: 1 1 200px;
+}
+.subscribe p {
+  color: var(--color-gris);
+  text-align: left;
 }
 
 .subscribe h3 {
   margin-bottom: 0.75rem;
+  color: var(--color-secundario);
+   text-align: center;
+  justify-content: center;
 }
 
 .subscribe-form {
@@ -409,7 +526,30 @@ p {
 }
 
 .social {
-  flex: 1 1 200px;
+    flex: 1 1 200px;
+    display: flex;
+    align-items: block;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  
+}
+.social h3 {
+  
+  text-align: center;
+   color: var(--color-secundario);
+}
+.social img {
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+   
+    
+   
 }
 
 .social-list {
@@ -423,6 +563,11 @@ p {
 .social-list a {
   color: #ffffff;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  
 }
 
 .social-list a:hover {
@@ -440,7 +585,7 @@ p {
    Estilos responsivos
    ===================================== */
 @media (max-width: 768px) {
-  /* Ocultar menú principal de escritorio */
+  /* Ocultar menú principal pantallas horizontales */
   .main-nav {
     display: none;
   }
@@ -471,8 +616,8 @@ p {
     flex-direction: column;
   }
 
-  .promo-card img,
-  .promo-card video {
+  .promo-card img
+  {
     max-width: 100%;
     height: auto;
   }

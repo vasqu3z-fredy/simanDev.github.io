@@ -4,12 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Siman | Promociones Exclusivas</title>
-  <!-- Google Fonts: Roboto (sans-serif) y Playfair Display (serif) -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
-    rel="stylesheet"
-  />
   <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 <!-- Header con checkbox hack para menú lateral -->
@@ -30,6 +26,7 @@
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
+        <span class="bar"></span>
       </label>
 
       <!-- Menú lateral (drawer) -->
@@ -38,6 +35,7 @@
           <li><a href="index.html" class="active">Inicio</a></li>
           <li><a href="pages/promociones.html">Promociones</a></li>
           <li><a href="pages/contacto.html">Contacto</a></li>
+          <li><a href="#">Registrarse</a></li>
         </ul>
       </nav>
 
@@ -47,7 +45,7 @@
           <li><a href="index.html" class="active">Inicio</a></li>
           <li><a href="pages/promociones.html">Promociones</a></li>
           <li><a href="pages/contacto.html">Contacto</a></li>
-          <li><a href="pages/Registrarse.html">Registrarse</a></li>
+          <li><a href="#">Registrarse</a></li>
         </ul>
       </nav>
     </div>
@@ -68,31 +66,42 @@
     </div>
   </section>
 
-  <!-- Sección de categorías rápidas -->
-  <section class="quick-categories">
-    <div class="container">
-      <article class="category-card">
-        <h2>Moda</h2>
-        <p>Hasta 50% de descuento en ropa de temporada.</p>
-      </article>
-      <article class="category-card">
-        <h2>Electrónica</h2>
-        <p>Ofertas imperdibles en televisores y audio.</p>
-      </article>
-      <article class="category-card">
-        <h2>Hogar</h2>
-        <p>Descuentos en muebles y decoración.</p>
-      </article>
-    </div>
-  </section>
+<!-- Sección Quick Categories  -->
+<section class="quick-categories">
+  <div class="container">
+    <article class="category-card">
+      <h2>Moda</h2>
+      <p>Hasta 50% de descuento en ropa de temporada.</p>
+      <img src="https://siman.vtexassets.com/assets/vtex.file-manager-graphql/images/96aa0df1-6e8f-447a-a901-e3eee8a172de___978e66f1d481b5d979e015e3c8b9772c.jpg" alt="Categoría Moda" class="category-img" />
+    </article>
+    <article class="category-card">
+      <h2>Electrónica</h2>
+      <p>Ofertas imperdibles en televisores y audio.</p>
+      <img src="assets/images/categoria-electronica.jpg" alt="Categoría Electrónica" class="category-img" />
+    </article>
+    <article class="category-card">
+      <h2>Hogar</h2>
+      <p>Descuentos en muebles y decoración.</p>
+      <img src="assets/images/categoria-hogar.jpg" alt="Categoría Hogar" class="category-img" />
+    </article>
+    <article class="category-card">
+      <h2>Deportes</h2>
+      <p>Hasta 30% en artículos deportivos.</p>
+      <img src="assets/images/categoria-deportes.jpg" alt="Categoría Deportes" class="category-img" />
+    </article>
+  </div>
+</section>
+
 
   <!-- Footer con formulario de suscripción -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
         <div class="subscribe">
-          <h3>Suscríbete y recibe ofertas directamente</h3>
-          <form action="#" method="POST" class="subscribe-form">
+         <h3>¿Quieres más ofertas?</h3>
+          <p>Suscríbete y obtén un 10% de descuento adicional</p>
+
+          <form action="pages/confirmacion.html" method="GET" class="subscribe-form">
             <label for="email" class="sr-only">Correo Electrónico</label>
             <input
               type="email"
@@ -105,11 +114,26 @@
           </form>
         </div>
         <div class="social">
+          <img src="https://praderaconcepcion.com/wp-content/uploads/2022/08/LOGO-SIMAN-768x193.png" alt="siman">
           <h3>Síguenos en redes sociales</h3>
+           
+            <!-- Redes sociales -->
           <ul class="social-list">
-            <li><a href="https://www.facebook.com/simanelsalvador" aria-label="Facebook">Facebook</a></li>
-            <li><a href="https://www.instagram.com/almacenessiman_sv/" aria-label="Instagram">Instagram</a></li>
-            <li><a href="http://www.youtube.com/user/SimanElSalvador/" aria-label="Twitter">Twitter</a></li>
+            <li>
+              <a href="https://www.facebook.com/simanelsalvador" aria-label="Facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/almacenessiman_sv/" aria-label="Instagram" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </li>
+            <li>
+              <a href="http://www.youtube.com/user/SimanElSalvador/" aria-label="YouTube" target="_blank">
+                <i class="fab fa-youtube"></i> YouTube
+              </a>
+            </li>
           </ul>
         </div>
       </div>
