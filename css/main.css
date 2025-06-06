@@ -7,6 +7,39 @@
   box-sizing: border-box;
 }
 /* =====================================
+   PALETA DE COLORES
+   ===================================== */
+:root {
+  /* Encabezados */
+  --color-h1:       #004080; /* Azul oscuro (para <h1>) */
+  --color-h2:       #003060; /* Azul más oscuro (para <h2>) */
+  --color-h3:       #0059B3; /* Azul medio (para <h3>) */
+
+  /* Colores principales de marca */
+  --color-primario: #004080; /* Azul oscuro (coincide con color-h1) */
+  --color-secundario: #F2C94C; /* Amarillo oro (destacado secundario) */
+  --color-terciario: #0074C8; /* Azul brillante (tono intermedio) */
+  --color-cuaternario: #bebebe; /* gris claro (para elementos secundarios) */
+  --color-siman: #a11621; /* Ocre (para elementos despecificos) */
+  --color-fondo-main: #ffff; /* Blanco puro (para fondo principal) */
+
+    /* Colores de botones */
+  --color-btn-primario: #004080; /* Azul oscuro (para botones primarios) */
+  --color-btn-secundario: #646464; /* gris (para botones secundarios) */
+  --color-btn-terciario: #013458; /* Azul brillante (para botones terciarios) */
+  
+
+  /* Color de acento / atención */
+  --color-acento:    #E74C3C; /* Rojo suave (para llamadas a acción o errores) */
+
+  /* Fondos y neutros */
+  --color-fondo:     #d2d2d2; /* Gris muy claro / casi blanco */
+  --color-fondo-secundario: #1f1f1f; /* Blanco puro (para fondos de tarjetas, secciones) */
+  --color-texto:     #333333; /* Gris oscuro para texto general */
+  --color-gris:      #E0E0E0; /* Gris claro (bordes, separadores, fondos secundarios) */
+}
+
+/* =====================================
    Fuentes importadas
    ===================================== */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
@@ -25,33 +58,6 @@ body {
   min-height: 100vh;
 }
 
-:root {
-  /* Encabezados */
-  --color-h1:       #004080; /* Azul oscuro (para <h1>) */
-  --color-h2:       #003060; /* Azul más oscuro (para <h2>) */
-  --color-h3:       #0059B3; /* Azul medio (para <h3>) */
-
-  /* Colores principales de marca */
-  --color-primario: #004080; /* Azul oscuro (coincide con color-h1) */
-  --color-secundario: #F2C94C; /* Amarillo oro (destacado secundario) */
-  --color-terciario: #0074C8; /* Azul brillante (tono intermedio) */
-  --color-cuaternario: #bebebe; /* gris claro (para elementos secundarios) */
-
-    /* Colores de botones */
-  --color-btn-primario: #004080; /* Azul oscuro (para botones primarios) */
-  --color-btn-secundario: #646464; /* gris (para botones secundarios) */
-  --color-btn-terciario: #01111c; /* Azul brillante (para botones terciarios) */
-  
-
-  /* Color de acento / atención */
-  --color-acento:    #E74C3C; /* Rojo suave (para llamadas a acción o errores) */
-
-  /* Fondos y neutros */
-  --color-fondo:     #d2d2d2; /* Gris muy claro / casi blanco */
-  --color-fondo-secundario: #1f1f1f; /* Blanco puro (para fondos de tarjetas, secciones) */
-  --color-texto:     #333333; /* Gris oscuro para texto general */
-  --color-gris:      #E0E0E0; /* Gris claro (bordes, separadores, fondos secundarios) */
-}
 
 /* =====================================
    Contenedores y utilidades
@@ -86,6 +92,7 @@ p {
   background-color: var(--color-primario);
   color: #ffffff;
   padding: 0.75rem 1.5rem;
+  margin-top: 0.5rem;;
   text-decoration: none;
   border-radius: 0.25rem;
   font-weight: 700;
@@ -122,8 +129,8 @@ p {
    Header y navegación
    ===================================== */
 .site-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  background-color:var(--color-fondo-main);
+  border-bottom: 1px solid var(--color-siman);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -145,7 +152,8 @@ p {
 .main-nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 0.1rem;
+
 }
 
 .main-nav a {
@@ -156,8 +164,36 @@ p {
 }
 
 .main-nav a:hover,
-.main-nav a.active {
-  color: #004080;
+.main-nav a.active,
+.side-nav a:hover,
+.side-nav a.active {
+  background-color: var(--color-siman);
+  color: var(--color-gris);
+  transition: background 0.2s, color 0.2s;
+}
+
+.main-nav li,
+.side-nav li {
+  transition: background 0.2s;
+}
+
+.main-nav li:hover,
+.side-nav li:hover {
+  background-color: var(--color-siman);
+}
+
+.main-nav li a,
+.side-nav li a {
+  display: block;
+  padding: 0.8rem;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.main-nav li:hover a,
+.side-nav li:hover a {
+  color: #fff;
 }
 
 /* ===== Checkbox (oculto) ===== */
@@ -181,9 +217,9 @@ p {
 .hamburger .bar {
   width: 100%;
   height: 3px;
-  background-color: #333;
+  background-color: var(--color-primario);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 /* Cuando el checkbox está marcado, cambia el estilo del icono */
@@ -206,7 +242,7 @@ p {
   left: -260px; /* oculto por defecto */
   width: 260px;
   height: 100%;
-  background-color: #ffffff;
+  background-color: var(--color-fondo-main);
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
   transition: left 0.3s ease;
   z-index: 999;
@@ -224,7 +260,7 @@ p {
 }
 
 .side-nav li {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-gris);
 }
 
 .side-nav a {
@@ -238,8 +274,8 @@ p {
 
 .side-nav a:hover,
 .side-nav a.active {
-  background-color: #f2f2f2;
-  color: #004080;
+  background-color: var(--color-gris);
+  color: var(--color-primario);
 }
 
 /* =====================================
@@ -283,7 +319,7 @@ p {
    Sección Quick Categories
    ===================================== */
 .quick-categories {
-  background-color: #ffffff;
+  background-color: var(--color-fondo-main);
   padding: 2rem 0;
 }
 
@@ -350,7 +386,7 @@ p {
 }
 
 .promo-card {
-  background-color: #ffffff;
+  background-color: var(--color-fondo-main);
   border-radius: 0.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -379,9 +415,20 @@ p {
 .promo-content h2 {
   margin-bottom: 0.5rem;
 }
+.promo-content h3 {
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  font-family: 'Montserrat', 'Arial Narrow', Arial, sans-serif;
+  color: var(--color-h3);
+}
 
 .promo-content p {
   margin-bottom: 1rem;
+   margin-top: 1rem;
+  font-size: 1rem;
+  font-family: 'Montserrat', 'Arial Narrow', Arial, sans-serif;
+  color: var(--color-texto);
 }
 .promo-content a {
     display: flex;
@@ -398,7 +445,7 @@ p {
    ===================================== */
 .contact-section {
   padding: 2rem 0;
-  background-color: #ffffff;
+  background-color: var(--color-fondo-main);
 }
 
 .contact-section h1 {
@@ -581,7 +628,7 @@ p {
 }
 
 .social-list a {
-  color: #ffffff;
+  color: var(--color-fondo-main);
   text-decoration: none;
   display: flex;
   align-items: center;
